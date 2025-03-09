@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code 圖片顯示</title>
+</head>
+<body>
+    <h1>掃描結果</h1>
+    <p>NO: <span id="noDisplay">未提供</span></p>
+    <img id="picDisplay" src="" alt="圖片載入中..." style="max-width: 300px; display: none;">
+
+    <script>
+        // 定義 NO 與 PIC 的對應關係
+        const dataMap = {
+            "A01": "pic1.jpg",
+            "A02": "pic2.jpg",
+            "A03": "pic3.jpg"
+        };
+
+        // 取得網址參數
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // 取得 NO 參數
+        const noValue = getQueryParam("no");
+
+        if (noValue && dataMap[noValue]) {
+            document.getElementById("noDisplay").innerText = noValue;
+            const imgElement = document.getElementById("picDisplay");
+            imgElement.src = dataMap[noValue];  // 設定圖片
+            imgElement.style.display = "block"; // 顯示圖片
+        } else {
+            document.getElementById("noDisplay").innerText = "查無此編號";
+        }
+    </script>
+</body>
+</html>
