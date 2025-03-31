@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuxVin酒標驗證平台</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            background: url('istockphoto-1316556128-612x612.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #5a3e36;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        #container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+        img {
+            max-width: 300px;
+            border: 3px solid #5a3e36;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>QR Code 掃描結果</h1>
-    <p>NO: <span id="noDisplay">未提供</span></p>
-    <img id="picDisplay" src="" alt="圖片載入中..." style="max-width: 300px; display: none;">
+    <div id="container">
+        <h1>QR Code 掃描結果</h1>
+        <p>NO: <span id="noDisplay">未提供</span></p>
+        <img id="picDisplay" src="" alt="圖片載入中..." style="display: none;">
+    </div>
 
     <script>
         // 定義 NO 與 PIC 的對應關係
