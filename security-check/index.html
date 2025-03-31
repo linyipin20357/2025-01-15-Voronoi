@@ -11,8 +11,13 @@
             background-size: cover;
             color: #5a3e36;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
             padding: 20px;
-            position: relative;
+            box-sizing: border-box;
         }
         h1 {
             font-size: 2em;
@@ -22,19 +27,30 @@
             font-size: 1.2em;
         }
         #container {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            position: relative;
-            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 90%;
+            width: 400px;
         }
         img {
-            max-width: 300px;
+            max-width: 100%;
+            height: auto;
             border: 3px solid #5a3e36;
             border-radius: 5px;
             margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            #container {
+                width: 90%;
+            }
         }
     </style>
 </head>
