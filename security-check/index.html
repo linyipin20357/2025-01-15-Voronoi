@@ -14,6 +14,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             height: 100vh;
             margin: 0;
             padding: 20px;
@@ -44,11 +45,21 @@
             border-radius: 5px;
             margin-top: 10px;
         }
+        #description {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 600px;
+            text-align: left;
+        }
         @media (max-width: 768px) {
             body {
                 padding: 10px;
             }
-            #container {
+            #container, #description {
                 width: 90%;
             }
         }
@@ -60,7 +71,23 @@
         <p>NO: <span id="noDisplay">未提供</span></p>
         <img id="picDisplay" src="" alt="圖片載入中..." style="display: none;">
     </div>
-
+    
+    <div id="description">
+        <h2>LuxVin 品牌介紹</h2>
+        <p>LuxVin的風格融合了經典與現代元素，酒標籤設計以葡萄及主題元素和高質感的紙張為主，營造出典雅的氛圍。每一款葡萄酒的標籤都像一件藝術品般精心製作，通過獨特的設計和精湛的工藝，呼應著酒本身的故事和風味。這種設計風格既突顯了LuxVin對於傳統的尊重和追求，同時也展現了對於創新和時尚的追求，使得LuxVin成為一個獨具魅力和韻味的品牌。</p>
+        
+        <h2>防偽說明</h2>
+        <p><strong>第一階安全防偽（肉眼辨識）</strong><br>
+        隨機生成圖形因其不可重複性可以通過肉眼進行初步辨識。</p>
+        
+        <p><strong>第二階安全防偽（使用簡易工具辨識）</strong><br>
+        變動微縮文字：需要借助放大鏡檢視。<br>
+        變動生成的螢光圖案：透過數位印刷和螢光油墨技術，在UV燈下顯現出隱藏的隨機圖案或編碼。</p>
+        
+        <p><strong>第三階安全防偽（使用特殊儀器判讀）</strong><br>
+        數位編碼技術：每個標籤的數位編碼，QR碼連接到防偽資料庫，通過智慧手機檢測，實現防偽查驗。</p>
+    </div>
+    
     <script>
         // 定義 NO 與 PIC 的對應關係
         const dataMap = {
